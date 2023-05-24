@@ -1,0 +1,16 @@
+aioipfs
+eth_account
+keras
+numpy
+onnx
+onnxruntime
+polars
+python-dotenv
+skl2onnx
+tensorflow
+tensorflow_macos
+tf2onnx
+torch
+web3
+scikit-learn
+opencv-python
