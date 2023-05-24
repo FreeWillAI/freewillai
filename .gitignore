@@ -1,0 +1,6 @@
+*__pycache__/
+
+__token__
+dist
+freewillai/freewillai.egg-info/
+env/

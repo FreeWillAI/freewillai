@@ -18,7 +18,7 @@ setuptools.setup(
     long_description_content_type = "text/markdown",
     url = "https://github.com/FreeWillAI/freewilliai",
     project_urls = {
-        "website": "freewillai.org",
+        "Bug Tracker": "https://github.com/FreeWillAI/freewilliai/issues",
     },
     classifiers = [
         "Programming Language :: Python :: 3",
