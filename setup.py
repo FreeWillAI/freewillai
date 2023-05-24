@@ -16,9 +16,9 @@ setuptools.setup(
     description = description,
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "freewillai.org",
+    url = "https://github.com/FreeWillAI/freewilliai",
     project_urls = {
-        "Bug Tracker": "freewillai.org",
+        "website": "freewillai.org",
     },
     classifiers = [
         "Programming Language :: Python :: 3",
@@ -27,5 +27,5 @@ setuptools.setup(
     ],
     package_dir = {"": "freewillai"},
     packages = setuptools.find_packages(where="freewillai"),
-    python_requires = ">=3.10"  # TODO: Support for 3.9
+    python_requires = ">=3.10"  # TODO: Support >=3.9
 )
