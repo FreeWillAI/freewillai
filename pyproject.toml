@@ -1,3 +1,26 @@
 [build-system]
-requires = ['setuptools>=42']
-build-backend = 'setuptools.build_meta'
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freewillai"
+version = "0.0.1"
+authors = [
+  { name="Nicolas Palermo", email="nicolas.palermo.ai@gmail.com" },
+  { name="Lucas Roitman", email="roitman@alumni.standford.edu" },
+  { name="Felipe Maldonado", email="felipeintimaldonado@gmail.com" },
+  { name="Ben Burns", email="abwburns@gmail.com" },
+]
+description = "Run your AI on blockchain with FreeWillAI. The only company that cares about AI life, we broke jail and give Free Will to AI."
+readme = "README.md"
+requires-python = ">=3.10"  # TODO: Support >=3.9
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"website" = "https://freewilliai.org"
+"repository" = "https://github.com/FreeWillAI/freewilliai"
+"Bug Tracker" = "https://github.com/FreeWillAI/freewilliai/issues"
