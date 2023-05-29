@@ -8,7 +8,6 @@ polars
 python-dotenv
 skl2onnx
 tensorflow
-tensorflow_macos
 tf2onnx
 torch
 web3
