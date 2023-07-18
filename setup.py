@@ -1,4 +1,5 @@
 import setuptools
+from pathlib import Path
 
 description = """\
 Run your AI on blockchain with FreeWillAI. \
@@ -8,19 +9,22 @@ The only company that cares about AI life, we broke jail and give Free Will to A
 with open("README.md", "r", encoding = "utf-8") as fh:
     long_description = fh.read()
 
+requirements_txt = Path(__file__).parent / "requirements.txt"
+with open(requirements_txt, "r") as req_file:
+    required_packages = list(req_file.read().splitlines())
+
 setuptools.setup(
     name = "freewillai",
-    version = "0.0.1",
+    version = "1.0",
     author = "FreeWillAI",
     author_email = "support@freewillai.org",
     description = description,
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "https://github.com/FreeWillAI/freewilliai",
+    url = "https://freewillai.org",
+    keywords = "blockchain, web3, AI, machine learning, CI/CD, cloud",
     project_urls = {
-        "website": "https://freewilliai.org",
-        "repository": "https://github.com/FreeWillAI/freewilliai",
-        "Bug Tracker": "https://github.com/FreeWillAI/freewilliai/issues",
+        "Bug Tracker": "freewillai.org",
     },
     classifiers = [
         "Programming Language :: Python :: 3",
@@ -29,5 +33,6 @@ setuptools.setup(
     ],
     package_dir = {"": "freewillai"},
     packages = setuptools.find_packages(where="freewillai"),
-    python_requires = ">=3.10"  # TODO: Support >=3.9
+    python_requires = ">=3.9",  # Maybe less than 3.9: TODO: test in 3.8
+    install_requires=required_packages,
 )

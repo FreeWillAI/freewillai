@@ -4,12 +4,17 @@ keras
 numpy
 onnx
 onnxruntime
-polars
 python-dotenv
 skl2onnx
 tensorflow
-tf2onnx
 torch
 web3
 scikit-learn
 opencv-python
+tqdm
+py-solc-x
+pillow
+polars
+torchvision
+transformers
+tf2onnx @ git+https://github.com/hackcheek/tensorflow-onnx@main
