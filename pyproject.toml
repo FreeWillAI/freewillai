@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "freewillai"
-version = "0.0.1"
+version = "1.2"
 authors = [
   { name="Nicolas Palermo", email="nicolas.palermo.ai@gmail.com" },
   { name="Lucas Roitman", email="roitman@alumni.standford.edu" },
@@ -19,6 +19,38 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+keywords = [
+    'blockchain',
+    'web3',
+    'AI',
+    'machine learning',
+    'CI/CD',
+    'cloud'
+]
+dependencies = [
+    "aioipfs",
+    "eth_account",
+    "keras",
+    "numpy",
+    "onnx",
+    "onnxruntime",
+    "python-dotenv",
+    "skl2onnx",
+    "tensorflow",
+    "torch",
+    "web3",
+    "scikit-learn",
+    "opencv-python",
+    "tqdm",
+    "py-solc-x",
+    "pillow",
+    "polars",
+    "torchvision",
+    "transformers",
+]
+# dependency_links = [
+#     "https://github.com/hackcheek/tensorflow-onnx/tarball/main#egg=tf2onnx",
+# ]
 
 [project.urls]
 "website" = "https://freewilliai.org"

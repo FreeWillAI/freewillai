@@ -17,4 +17,4 @@ pillow
 polars
 torchvision
 transformers
-tf2onnx @ git+https://github.com/hackcheek/tensorflow-onnx@main
+tf2onnx @ git+ssh://github.com/hackcheek/tensorflow-onnx@main

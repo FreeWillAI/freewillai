@@ -15,7 +15,7 @@ with open(requirements_txt, "r") as req_file:
 
 setuptools.setup(
     name = "freewillai",
-    version = "1.0",
+    version = "1.2",
     author = "FreeWillAI",
     author_email = "support@freewillai.org",
     description = description,
@@ -35,4 +35,7 @@ setuptools.setup(
     packages = setuptools.find_packages(where="freewillai"),
     python_requires = ">=3.9",  # Maybe less than 3.9: TODO: test in 3.8
     install_requires=required_packages,
+    dependency_links = [
+        "https://github.com/hackcheek/tensorflow-onnx/tarball/main#egg=tf2onnx",
+    ],
 )
