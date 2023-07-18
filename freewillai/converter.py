@@ -3,6 +3,7 @@ import logging
 import tensorflow as tf
 from typing import Optional, Tuple
 
+import sys
 
 class ModelConverter:
 
@@ -27,8 +28,13 @@ class ModelConverter:
     ) -> None:
         
         if input_size is None:
-            input_size = model.coef_.shape
-
+            try:
+                input_size = model.coef_.shape[1]
+            except AttributeError:
+                input_size = model.n_features_in_
+            except Exception as err:
+                raise RuntimeError(err)
+            
         logging.debug(f'Writing the onnx model to {output_path}')
         from skl2onnx import convert_sklearn
         from skl2onnx.common.data_types import FloatTensorType
@@ -36,9 +42,9 @@ class ModelConverter:
         if isinstance(model, str):
             import pickle
             model =  pickle.load(open(str(model), "rb"))
-        
-        initial_type = [('float_input', FloatTensorType([None, input_size[1]]))]
-        onx = convert_sklearn(model, initial_types=initial_type)
+
+        initial_type = [('float_input', FloatTensorType([None, input_size]))]
+        onx = convert_sklearn(model, initial_types=initial_type, target_opset=17)
         with open(output_path, "wb") as f:
             f.write(onx.SerializeToString())
 
