@@ -402,7 +402,9 @@ class Provider:
         self, 
         uri: Optional[str] = None,
         middlewares: List[Union[Web3Middleware, Middleware]] = [],
-        network_type: Literal["mainnet", "testnet", "non-official"] = "non-official"
+        network_type: Literal["mainnet", "testnet", "non-official"] = "non-official",
+        token_address: Optional[str] = None,
+        task_runner_address: Optional[str] = None,
     ):
         if network_type == "non-official" and self.uri is None:
             raise UserRequirement(
@@ -411,8 +413,8 @@ class Provider:
 
         self.uri = uri
         self.network_type = network_type
-        self.token_address = Global.token_address
-        self.task_runner_address = Global.task_runner_address
+        self.token_address = token_address or Global.token_address
+        self.task_runner_address = task_runner_address or Global.task_runner_address
 
         if (network_type == "non-official" 
             and (

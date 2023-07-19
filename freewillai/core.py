@@ -300,14 +300,20 @@ def connect(
     uri_or_network: str, 
     middlewares: List[Union[Web3Middleware, Middleware]] = [],
     api_key: Optional[str] = None,
-    env_file: Optional[str] = None
+    env_file: Optional[str] = None,
+    token_address: Optional[str] = None,
+    task_runner_address: Optional[str] = None,
 ) -> Union[Provider, Type[Provider]]:
-
     env_file = env_file or ".env"
     load_global_env(env_file)
 
     if uri_or_network.startswith("http") or uri_or_network.startswith("ws"):
-        provider = Provider(uri_or_network, middlewares)
+        provider = Provider(
+            uri_or_network,
+            middlewares,
+            token_address=token_address,
+            task_runner_address=task_runner_address,
+        )
     else:
         provider = Provider.by_network_name(uri_or_network)
         try:
@@ -316,7 +322,8 @@ def connect(
             if provider.is_api_key_required() and not api_key:
                 raise UserRequirement(
                     f"{err}\n"
-                    "Also you can pass api_key as argument, e.g: freewillai.connect(\"sepolia\", api_key='paste-your-api-key-here')"
+                    "Also you can pass api_key as argument, e.g: "
+                    "freewillai.connect(\"sepolia\", api_key='paste-your-api-key-here')"
                 )
             provider.exception(str(err))
 

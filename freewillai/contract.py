@@ -99,8 +99,8 @@ class Contract:
 
         return params
 
-    def wait_for_transaction(self, tx_hash: HexBytes, raise_on_error: bool = True) -> TxReceipt:
 
+    def wait_for_transaction(self, tx_hash: HexBytes, raise_on_error: bool = True) -> TxReceipt:
         print(f"\n"
             f'[*] Waiting for transaction...\n'
             f'  > transaction hash: {tx_hash.hex()}'
@@ -110,6 +110,7 @@ class Contract:
             self.check_transaction(tx_hash)
         print(f'  > done')
         return receipt
+
 
     def send_transact_function(self, func_name: str, *args, log=True, max_retries=5, num_retry=0) -> HexBytes:
         contract_function = getattr(
@@ -153,6 +154,7 @@ class Contract:
         if log:
             print(f'[*] Executing view function "{func_name}" from "{self.name}"')
         return contract_function.call()
+
 
     def check_transaction(self, tx_hash):
         tx = cast(Dict, self.w3.eth.get_transaction(tx_hash))
