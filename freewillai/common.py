@@ -515,9 +515,9 @@ class Provider:
         if (uri is not None
             and (
                 not uri.startswith("http://")
-                or not uri.startswith("https://")
-                or not uri.startswith("ws://")
-                or not uri.startswith("wss://"))
+                and not uri.startswith("https://")
+                and not uri.startswith("ws://")
+                and not uri.startswith("wss://"))
         ):
             raise NotSupportedError(
                 f"{uri=}. Invalid uri format\n"
