@@ -460,7 +460,7 @@ class Provider:
             'testnet/arbitrum'
             'devnet/anvil'
         """
-        return ["default"]
+        return "default"
 
     @classmethod
     def build(
