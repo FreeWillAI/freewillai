@@ -406,7 +406,7 @@ class Provider:
         token_address: Optional[str] = None,
         task_runner_address: Optional[str] = None,
     ):
-        if network_type == "non-official" and self.uri is None:
+        if network_type == "non-official" and uri is None:
             raise UserRequirement(
                 "If you want to use a non-official network you need to pass uri argument"
             )
